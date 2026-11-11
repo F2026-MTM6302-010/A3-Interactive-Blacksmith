@@ -25,6 +25,12 @@
     const forgeStatusMessage = document.querySelector("#forge-status");
     const actionMessage = document.querySelector("#action-message");
 
+// The game constrols:
+const heatInput = document.getElementById("heat-input");
+const addHeatButton = document.getElementById("add-heat-button");
+const makeSwordButton = document.getElementById("make-sword-button");
+const resetForgeButton = document.getElementById("reset-forge-button");
+
 
 // 2. Create the two state variables: heat and swords made.
     let heat = 20; /* Current value of the heat and the value that I can change to play but it's not the same as the Id above */
@@ -104,3 +110,29 @@
     resetForge();
 
 // Use the tests in ASSIGNMENT.md to check your work.
+
+// Calling the events and function to the buttons for the game
+addHeatButton.addEventListener("click", function()){
+    const amount = Number(heatInput.value);
+    if(!Number.isInteger(amount) || amount <= 0){
+    actionMessage.textContent = "Please enter a positive whole number.";
+    return;
+    }
+
+    heatForge(amount);
+};
+
+
+// Console tests and results
+
+//document.getElementById("heat-input")
+// <input type="number" id="heat-input" min="1" step="1">
+
+// typeof heatInput
+// 'indefined'
+
+// document.getElementById("heat-input")
+// <input type="number" id="heat-input" min="1" step="1">
+
+// document.querySelector("#heat-input").value
+// '25'

@@ -82,7 +82,7 @@ const resetForgeButton = document.getElementById("reset-forge-button");
     function resetForge(){
         heat = 20;
         swords = 0;
-        actionMessage.textContent = "Welcome to the forge. Add heat to begin.";
+        actionMessage.textContent = "";
         updateForge();
     }
 // 6. Write heatForge(amount). Add heat, cap it, and update the page.
@@ -112,15 +112,27 @@ const resetForgeButton = document.getElementById("reset-forge-button");
 // Use the tests in ASSIGNMENT.md to check your work.
 
 // Calling the events and function to the buttons for the game
-addHeatButton.addEventListener("click", function()){
+// 1st button: add heat to the forge
+addHeatButton.addEventListener("click", function(){
     const amount = Number(heatInput.value);
-    if(!Number.isInteger(amount) || amount <= 0){
+    if(!Number.isInteger(amount) || amount <= 0){ //this is to verify if the number is whole, and ! is to tell if it is NOT a whole number it's not allowed. this line of code tells whole number or a number less than equal
     actionMessage.textContent = "Please enter a positive whole number.";
-    return;
+    return; //execute the function in that moment, so an invalid value don't come to the heatForge
     }
 
     heatForge(amount);
-};
+});
+
+// 2nd button: make a sword using the available heat
+makeSwordButton.addEventListener("click", function(){
+    makeSword();
+}); // selecting the button, adding an event to the btn, and calling the function to execute the function
+
+// 3rd button: reset the forge and clear the input
+resetForgeButton.addEventListener("click", function(){
+    resetForge();
+    heatInput.value = ""; //this makes the input to type the number when we click reset being empty.
+});
 
 
 // Console tests and results

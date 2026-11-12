@@ -25,6 +25,8 @@
     const forgeStatusMessage = document.querySelector("#forge-status");
     const actionMessage = document.querySelector("#action-message");
 
+    
+// Assignment 3 - Interactive Blacksmith
 // The game constrols:
 const heatInput = document.getElementById("heat-input");
 const addHeatButton = document.getElementById("add-heat-button");

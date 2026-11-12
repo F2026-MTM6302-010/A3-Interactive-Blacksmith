@@ -39,3 +39,98 @@ footer { margin-top: 2rem; font-size: .9rem; color: #455449; }
 @media (max-width: 700px) { .layout { grid-template-columns: 1fr; } main { padding-top: 1.5rem; } .forge-top, .readings { padding: 1.5rem; } .message-box { margin-inline: 1.5rem; } }
 
 #forge-image { display: block; width: 100%; height: auto; max-height: 240px; object-fit: contain; margin: -1rem auto 1rem; }
+
+/* Styling the buttons of the game according to the mockup */
+/* Organizing heat to add text, button and location of the input and button, also stylizing them according to the mockup as green with a white text */
+aside .panel:first-child h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+aside .panel:first-child > div {
+  display: grid;
+  grid-template-columns: 1fr 11.4rem;
+  gap: .5rem .9rem;
+  align-items: stretch;
+}
+
+.panel label {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Size and spaces for both input and button for the heat to add section */
+#heat-input {
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 1rem;
+  font: inherit;
+  font-size: 1.4rem;
+  color: #212721;
+  background: #fff;
+  border: 1px solid #bdc9c2;
+  border-radius: .75rem;
+}
+
+/* the size of the buttons */
+#add-heat-button,
+#make-sword-button,
+#reset-forge-button {
+  height: 3.5rem;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: .75rem;
+  cursor: pointer;
+}
+
+/* Adding the same style to the buttons who is equal */
+#add-heat-button,
+#make-sword-button {
+  color: #fff;
+  border: 0;
+  background:#006341;
+}
+
+/* Stretching the buttons to fill the whole space of the card respecting the margins */
+#add-heat-button,
+#make-sword-button,
+#reset-forge-button {
+  display: block;
+  width: 100%;
+}
+
+/* The style fo the reset forge button which is different than the others two that's why this one is alone */
+#reset-forge-button {
+  color: #006341;
+  background: #fff;
+  border: 2px solid #006341;
+}
+
+/* I asked AI help to modify the arrows from the standart webkit one to a google symbol svg that I saved on my assets folder to make it more similar to the mockup. I didn't know if this kind of detail it'll be consider but I found it would be better try to do it */
+#heat-input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* I learned this webkit means the pattern provided by the browser for input numbers, and once you call none it "turns" off the pattern used by the browser */
+  opacity: 1;
+  width: 1.75rem;
+  height: 2.25rem;
+  margin: 0;
+  border-radius: .5rem;
+  background-color: #eceeed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.4rem;
+  background-image: url("assets/unfold_more.svg");
+}
+
+/* The space of the paragraphs (class = note) below the buttons, just in the forge controls card */
+aside .panel:first-child .note {
+  margin-top: .7rem; /* this is the space between the all the paragraphs who has the clas note right after their own section */
+  margin-bottom: 1.25rem; /* the space before start the make sword button */
+}
+
+/* The last note doesn't need space below it */
+aside .panel:first-child .note:last-child {
+  margin-bottom: 0;
+}

@@ -25,9 +25,8 @@
     const forgeStatusMessage = document.querySelector("#forge-status");
     const actionMessage = document.querySelector("#action-message");
 
-    
-// Assignment 3 - Interactive Blacksmith
-// The game constrols:
+
+// The game constrols for the Assignment 3 - Interactive Blacksmith
 const heatInput = document.getElementById("heat-input");
 const addHeatButton = document.getElementById("add-heat-button");
 const makeSwordButton = document.getElementById("make-sword-button");
@@ -112,6 +111,8 @@ const resetForgeButton = document.getElementById("reset-forge-button");
     resetForge();
 
 // Use the tests in ASSIGNMENT.md to check your work.
+
+// Assignment 3 - Interactive Blacksmith | Listeners and Functions
 
 // Calling the events and function to the buttons for the game
 // 1st button: add heat to the forge
